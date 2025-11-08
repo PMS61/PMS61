@@ -6,33 +6,53 @@ import { useEffect, useRef, useState } from "react"
 export default function Home() {
   const [isDark, setIsDark] = useState(true)
   const [activeSection, setActiveSection] = useState("")
+  const [projectsLoaded, setProjectsLoaded] = useState(false)
   const sectionsRef = useRef<(HTMLElement | null)[]>([null, null, null, null, null])
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDark)
   }, [isDark])
+  
+  useEffect(() => {
+    // Ensure projects section is visible after initial render in case IntersectionObserver doesn't trigger
+    const timer = setTimeout(() => {
+      setProjectsLoaded(true);
+    }, 1000); // Show projects after 1 second if not already loaded
+
+    return () => clearTimeout(timer);
+  }, [setProjectsLoaded]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Remove opacity-0 and add animation when section is intersecting
-            entry.target.classList.remove("opacity-0");
-            entry.target.classList.add("animate-fade-in-up");
+            if (entry.target.id === 'projects') {
+              setProjectsLoaded(true);
+            } else {
+              // Remove opacity-0 and add animation when section is intersecting
+              entry.target.classList.remove("opacity-0");
+              entry.target.classList.add("animate-fade-in-up");
+            }
             setActiveSection(entry.target.id);
           }
         });
       },
-      { threshold: 0.1, rootMargin: "0px 0px -70% 0px" }
+      { threshold: 0.05, rootMargin: "0px 0px -50% 0px" }
     );
 
-    sectionsRef.current.forEach((section) => {
-      if (section) observer.observe(section);
-    });
+    // Wait for DOM to be ready before observing
+    const timer = setTimeout(() => {
+      sectionsRef.current.forEach((section) => {
+        if (section) observer.observe(section);
+      });
+    }, 100);
 
-    return () => observer.disconnect();
-  }, []);
+    return () => {
+      clearTimeout(timer);
+      observer.disconnect();
+    };
+  }, [setProjectsLoaded]);
 
   const toggleTheme = () => {
     setIsDark(!isDark)
@@ -120,7 +140,7 @@ export default function Home() {
         <section
           id="projects"
           ref={(el) => (sectionsRef.current[1] = el)}
-          className="min-h-screen py-20 sm:py-32 opacity-0"
+          className={`min-h-screen py-20 sm:py-32 ${projectsLoaded ? 'animate-fade-in-up' : 'opacity-0'}`}
         >
           <div className="space-y-12 sm:space-y-16">
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
