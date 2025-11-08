@@ -9,11 +9,15 @@ I love building intelligent, user-centric applications that solve real-world pro
 
 ---
 
-### 🔭 I'm Currently Working On
+### 🚀 Featured Projects
 
 * 🌐 **[Mappa](https://example.com)**: Real-time collaborative workspace with document editing, code collaboration, video conferencing, and task management for 100+ concurrent users.
 * 🧠 **[Veritas](https://example.com)**: AI-powered misinformation detection platform with advanced analytics for journalists and researchers, monitoring multiple social media platforms. 
 * 🗣️ **[Eloquence](https://github.com/PMS61/Eloquence)**: AI-powered public speaking tutor that provides real-time feedback on delivery and content with 90% accuracy on custom datasets.
+* 🧠 **[CogniSphere](https://github.com/your-username/cognisphere.git)**: AI-powered 3D tutor platform delivering personalized, multimodal learning experiences with dynamic curriculum curation using RAG, 3D interface, and visual processing of textbooks and handwritten notes.
+* 🌟 **[SoulBuddy](https://supermind-grll.vercel.app/)**: AI-powered spiritual guide platform delivering personalized guidance through astrology and numerology with Kundali generation, gemstone recommendations, and meditation content.
+* 🧠 **[NeuroTwin](https://github.com/yourusername/NeuroTwin.git)**: Digital brain twin platform that creates personalized models from EEG data, enabling medical professionals to analyze patterns, simulate treatments, and predict surgical outcomes.
+* 🌟 **[NavDrishti](https://github.com/yourusername/navdrishti.git)**: IoT-based smart navigation system for the visually impaired, combining a mobile app with sensor-equipped smart stick for real-time obstacle detection, GPS navigation, and emergency support.
 
 ---
 

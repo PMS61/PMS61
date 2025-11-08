@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react"
 export default function Home() {
   const [isDark, setIsDark] = useState(true)
   const [activeSection, setActiveSection] = useState("")
-  const sectionsRef = useRef<(HTMLElement | null)[]>([])
+  const sectionsRef = useRef<(HTMLElement | null)[]>([null, null, null, null, null])
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDark)
@@ -17,20 +17,22 @@ export default function Home() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("animate-fade-in-up")
-            setActiveSection(entry.target.id)
+            // Remove opacity-0 and add animation when section is intersecting
+            entry.target.classList.remove("opacity-0");
+            entry.target.classList.add("animate-fade-in-up");
+            setActiveSection(entry.target.id);
           }
-        })
+        });
       },
-      { threshold: 0.3, rootMargin: "0px 0px -20% 0px" },
-    )
+      { threshold: 0.1, rootMargin: "0px 0px -70% 0px" }
+    );
 
     sectionsRef.current.forEach((section) => {
-      if (section) observer.observe(section)
-    })
+      if (section) observer.observe(section);
+    });
 
-    return () => observer.disconnect()
-  }, [])
+    return () => observer.disconnect();
+  }, []);
 
   const toggleTheme = () => {
     setIsDark(!isDark)
@@ -123,14 +125,13 @@ export default function Home() {
           <div className="space-y-12 sm:space-y-16">
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
               <h2 className="text-3xl sm:text-4xl font-light">Featured Projects</h2>
-              <div className="text-sm text-muted-foreground font-mono">2024 — 2025</div>
             </div>
 
             <div className="space-y-8 sm:space-y-12">
               {[
                 {
                   name: "Mappa",
-                  period: "Feb – Oct 2025",
+                  github: "https://github.com/Amal-Verma/Collaborative-IDE",
                   description:
                     "Real-time collaborative workspace with document editing, code collaboration, video conferencing, and task management for 100+ concurrent users.",
                   tech: {
@@ -143,7 +144,7 @@ export default function Home() {
                 },
                 {
                   name: "Veritas",
-                  period: "Sep 2025 – Present",
+                  github: "https://github.com/PMS61/Veritas",
                   description:
                     "AI-powered misinformation detection platform with advanced analytics for journalists and researchers, monitoring multiple social media platforms.",
                   tech: {
@@ -152,11 +153,11 @@ export default function Home() {
                     ml: ["HuggingFace"],
                     infra: ["Celery", "Redis", "Docker"],
                   },
-                  highlight: "Trend detection with BERTopic clustering",
+                  highlight: "AI-powered misinformation detection platform",
                 },
                 {
                   name: "Eloquence",
-                  period: "Oct 2024 – May 2025",
+                  github: "https://github.com/PMS61/Eloquence",
                   description:
                     "AI public speaking coach analyzing speech pace, tone, facial expressions, and vocabulary with 90% accuracy on custom datasets.",
                   tech: {
@@ -167,21 +168,79 @@ export default function Home() {
                   },
                   highlight: "Real-time emotion & sentiment analysis",
                 },
+                {
+                  name: "CogniSphere",
+                  github: "https://github.com/your-username/cognisphere.git",
+                  description:
+                    "AI-powered 3D tutor platform delivering personalized, multimodal learning experiences with dynamic curriculum curation.",
+                  tech: {
+                    frontend: ["Next.js"],
+                    backend: ["Supabase"],
+                    ml: ["Gemini Pro", "RAG"],
+                    vision: ["Tesseract.js", "OpenCV", "Mediapipe"],
+                  },
+                  highlight: "Personalized learning roadmaps with multimodal crash courses",
+                },
+                {
+                  name: "SoulBuddy",
+                  github: "https://github.com/ghruank/Soul_Buddy",
+                  description:
+                    "AI-powered spiritual guide platform delivering personalized guidance through astrology and numerology with Kundali generation, gemstone recommendations, and meditation content.",
+                  tech: {
+                    frontend: ["Next.js", "Tailwind CSS"],
+                    backend: ["Flask"],
+                    ml: ["Langflow", "NLP"],
+                    database: ["AstraDB"],
+                    deployment: ["Vercel", "Render"],
+                  },
+                  highlight: "Astrological insights with AI-powered chatbot",
+                },
+                {
+                  name: "NeuroTwin",
+                  github: "https://github.com/xyz-harshal/Airavat",
+                  description:
+                    "Digital brain twin platform that creates personalized models from EEG data, enabling medical professionals to analyze patterns, simulate treatments, and predict surgical outcomes.",
+                  tech: {
+                    frontend: ["Next.js", "React 19"],
+                    backend: ["FastAPI", "Python"],
+                    ml: ["PyTorch", "MNE", "Groq API"],
+                    database: ["Supabase"],
+                  },
+                  highlight: "EEG analysis with treatment simulation",
+                },
+                {
+                  name: "NavDrishti",
+                  github: "https://github.com/yourusername/navdrishti.git",
+                  description:
+                    "IoT-based smart navigation system for the visually impaired, combining a mobile app with sensor-equipped smart stick for real-time obstacle detection, GPS navigation, and emergency support.",
+                  tech: {
+                    frontend: ["Flutter"],
+                    backend: ["Supabase", "Firebase"],
+                    hardware: ["ESP32", "BLE"],
+                    vision: ["Google ML Kit"],
+                  },
+                  highlight: "Bluetooth-enabled smart stick with real-time navigation",
+                },
               ].map((project, index) => (
                 <div
                   key={index}
                   className="group grid lg:grid-cols-12 gap-4 sm:gap-8 py-6 sm:py-8 border-b border-border/50 hover:border-border transition-colors duration-500"
                 >
                   <div className="lg:col-span-2">
-                    <div className="text-xl sm:text-2xl font-light text-muted-foreground group-hover:text-foreground transition-colors duration-500">
-                      {project.name}
+                    <div className={`${project.name === "CogniSphere" ? "text-lg sm:text-xl" : "text-xl sm:text-2xl"} font-light text-muted-foreground group-hover:text-foreground transition-colors duration-500`}>
+                      {project.github ? (
+                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                          {project.name}
+                        </a>
+                      ) : (
+                        project.name
+                      )}
                     </div>
                   </div>
 
                   <div className="lg:col-span-6 space-y-3">
                     <div>
                       <h3 className="text-lg sm:text-xl font-medium">{project.highlight}</h3>
-                      <div className="text-muted-foreground text-sm">{project.period}</div>
                     </div>
                     <p className="text-muted-foreground leading-relaxed max-w-lg">{project.description}</p>
                   </div>
@@ -219,7 +278,6 @@ export default function Home() {
           <div className="space-y-12 sm:space-y-16">
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
               <h2 className="text-3xl sm:text-4xl font-light">Experience</h2>
-              <div className="text-sm text-muted-foreground font-mono">2023 — Present</div>
             </div>
 
             <div className="space-y-8 sm:space-y-12">
@@ -320,12 +378,12 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="connect" ref={(el) => (sectionsRef.current[4] = el)} className="py-20 sm:py-32 opacity-0">
-          <div className="grid lg:grid-cols-2 gap-12 sm:gap-16">
-            <div className="space-y-6 sm:space-y-8">
+        <section id="connect" ref={(el) => (sectionsRef.current[4] = el)} className="min-h-screen py-16 sm:py-20 opacity-0">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12">
+            <div className="space-y-4 sm:space-y-6">
               <h2 className="text-3xl sm:text-4xl font-light">Let's Connect</h2>
 
-              <div className="space-y-6">
+              <div className="space-y-4">
                 <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
                   Open to collaborations, mentorship opportunities, and conversations about full-stack development,
                   AI/ML, and real-time systems.
@@ -333,7 +391,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="space-y-6 sm:space-y-8">
+            <div className="space-y-4 sm:space-y-6">
               <div className="text-sm text-muted-foreground font-mono">FIND ME</div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
