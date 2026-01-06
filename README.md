@@ -34,11 +34,11 @@ I love building intelligent, user-centric applications that solve real-world pro
 
 ### 📊 My GitHub Activity
 
-<p align="center">
+<div align="center">
   <a href="https://github.com/PMS61">
-    <img align="center" src="https://github-readme-stats.vercel.app/api?username=PMS61&show_icons=true&theme=tokyonight&rank_icon=github" />
+    <img src="https://github-readme-stats.vercel.app/api?username=PMS61&show_icons=true&theme=tokyonight&rank_icon=github" height="180" />
   </a>
   <a href="https://github.com/PMS61">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=PMS61&layout=compact&theme=tokyonight" />
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=PMS61&layout=compact&theme=tokyonight" height="180" />
   </a>
-</p>
+</div>
