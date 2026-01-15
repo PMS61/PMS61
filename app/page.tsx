@@ -223,7 +223,7 @@ export default function Home() {
                   tech: {
                     frontend: ["Next.js", "React 19"],
                     backend: ["FastAPI", "Python"],
-                    ml: ["PyTorch", "MNE", "Groq API"],
+                    ml: ["PyTorch", "MNE", "Gemini API"],
                     database: ["Supabase"],
                   },
                   highlight: "EEG analysis with treatment simulation",
