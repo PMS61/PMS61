@@ -189,19 +189,6 @@ export default function Home() {
                   highlight: "Real-time emotion & sentiment analysis",
                 },
                 {
-                  name: "CogniSphere",
-                  github: "https://github.com/your-username/cognisphere.git",
-                  description:
-                    "AI-powered 3D tutor platform delivering personalized, multimodal learning experiences with dynamic curriculum curation.",
-                  tech: {
-                    frontend: ["Next.js"],
-                    backend: ["Supabase"],
-                    ml: ["Gemini Pro", "RAG"],
-                    vision: ["Tesseract.js", "OpenCV", "Mediapipe"],
-                  },
-                  highlight: "Personalized learning roadmaps with multimodal crash courses",
-                },
-                {
                   name: "SoulBuddy",
                   github: "https://github.com/ghruank/Soul_Buddy",
                   description:
