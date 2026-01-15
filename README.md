@@ -30,15 +30,3 @@ I love building intelligent, user-centric applications that solve real-world pro
 | ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)           | ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)                     | ![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)                     | ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)                               |
 | ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)       | ![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)                 | ![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)                                         | ![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)                                  |
 
----
-
-### 📊 My GitHub Activity
-
-<div align="center">
-  <a href="https://github.com/PMS61">
-    <img src="https://github-readme-stats.vercel.app/api?username=PMS61&show_icons=true&theme=tokyonight&rank_icon=github" height="180" />
-  </a>
-  <a href="https://github.com/PMS61">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=PMS61&layout=compact&theme=tokyonight" height="180" />
-  </a>
-</div>
