@@ -1,0 +1,185 @@
+%-------------------------
+% Resume in LaTeX
+% Author : Prathamesh Sankhe
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome}
+\usepackage{amsmath}
+\usepackage{multicol}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.6in}
+\addtolength{\textwidth}{1.2in}
+\addtolength{\topmargin}{-0.9in}
+\addtolength{\textheight}{1.7in}
+
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{0em}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\urlstyle{same}
+
+\setlist[itemize]{nosep, leftmargin=0.15in}
+
+\titleformat{\section}{
+  \vspace{-12pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-8pt}]
+
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}
+}
+
+\newcommand{\resumeProjectHeading}[3]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small\textbf{#1} & \small\textit{#3} \\
+      \multicolumn{2}{l}{\small\textit{#2}}
+    \end{tabular*}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.4in, label=\tiny$\bullet$]}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Prathamesh Sankhe} \\ \vspace{1pt}
+    \small \faPhone\ +91 9987695273 $|$ \faEnvelope\ \href{mailto:prathamesh.sankhe1606@gmail.com}{\underline{prathamesh.sankhe1606@gmail.com}} $|$ 
+    \faLinkedin\ \href{https://www.linkedin.com/in/prathamesh-sankhe-302294294/}{\underline{LinkedIn}} $|$
+    \faGithub\ \href{https://github.com/PMS61}{\underline{GitHub}} $|$
+    \faGlobe\ \href{https://prathamesh-sankhe.vercel.app/}{\underline{Portfolio}}
+\end{center}
+\vspace{-15pt}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Veermata Jijabai Technological Institute}{Mumbai, India}
+      {Bachelor of Technology in Information Technology}{Aug 2023 -- Present}
+    \resumeSubheading
+      {Nirmala College of Science and Commerce}{Mumbai, India}
+      {HSC: 77\% | MHT-CET: 99.43 percentile}{May 2023}
+  \resumeSubHeadingListEnd
+
+%-----------POSITIONS OF RESPONSIBILITY-----------
+\section{Positions of Responsibility}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Development Head}{Sep 2025 -- Present}
+      {Community of Coders, VJTI}{Mumbai, India}
+      \resumeItemListStart
+        \resumeItem{Leading 15-member development team and organizing coding events for 120+ participants across multiple colleges.}
+        \resumeItem{Supervised and participated in building the Community of Coders website and individual event platforms using Next.js and Supabase.}
+        \resumeItem{Mentoring 50+ juniors in full-stack web development, Git workflows, and cloud deployment practices.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {Mappa - Real-Time Collaborative Workspace \href{https://github.com/Amal-Verma/Collaborative-IDE}{\faGithub}}
+          {Next.js, TypeScript, FastAPI, Supabase, Liveblocks, Stream, Docker}
+          {Feb 2025 -- Oct 2025}
+          \resumeItemListStart
+            \resumeItem{Developed real-time workspace for 100+ concurrent users with live docs, code execution, and video.}
+            \resumeItem{Integrated Liveblocks for conflict-free editing, cursor tracking, and presence synchronization.}
+            \resumeItem{Secured multi-tenant architecture via Supabase RLS and engineered FastAPI backend for authentication and HD video conferencing via Stream API.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {TrendFall - Viral Trend Intelligence Platform \href{https://github.com/PMS61/Trendfall}{\faGithub}}
+          {Next.js 16, React 19, FastAPI, Supabase, Groq (Llama-3), XGBoost, SHAP, SerpApi, Capacitor}
+          {Jan 2025 -- Present}
+          \resumeItemListStart
+            \resumeItem{Built a multi-platform trend intelligence system scraping live hashtag data from Twitter/X and meme data from KnowYourMeme, aggregating viral content across Instagram, Reddit, and YouTube.}
+            \resumeItem{Engineered ML pipeline with XGBoost regressors and Ruptures change-point detection across 17 engineered features, producing SHAP-explainable trend forecasts for engagement and popularity.}
+            \resumeItem{Leveraged Groq (Llama-3) to generate AI-powered trend reports and insights, served through a Next.js dashboard with proprietary Engagement Score, Popularity Index, and Trend Score metrics.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {CogniSphere - AI-Powered 3D Learning Platform \href{https://github.com/PMS61/CogniSphere}{\faGithub}}
+          {Next.js, Supabase, Gemini, FastAPI, RAG, OpenCV, R3F}
+          {Nov 2025 -- Present}
+          \resumeItemListStart
+            \resumeItem{Developing an AI-powered learning platform featuring a 3D avatar tutor that delivers multimodal RAG experiences, combining lecture notes, PDFs, and diagrams into personalized learning roadmaps.}
+            \resumeItem{Implemented vector search over ingested PDFs/notes and built a Tesseract.js/OpenCV pipeline to digitize handwritten content and automatically segment diagrams for knowledge extraction.}
+            \resumeItem{Rendered interactive 3D tutors via React Three Fiber with lip-sync animations, and designed an adaptive quiz generation system that adjusts difficulty based on learner performance.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {Eloquence - AI Public Speaking Coach \href{https://github.com/PMS61/Eloquence}{\faGithub}}
+          {Next.js, Flask, PyTorch, OpenCV, MongoDB}
+          {Oct 2024 -- May 2025}
+          \resumeItemListStart
+            \resumeItem{Built an AI public speaking coach that analyzes pace, tone, filler words, and facial expressions in real-time, delivering structured feedback reports with actionable improvement suggestions.}
+            \resumeItem{Developed PyTorch pipelines for voice and facial sentiment analysis achieving 90\% accuracy, and deployed custom NLP models for live transcription, filler word detection, and vocabulary scoring.}
+            \resumeItem{Engineered an asynchronous Flask/OpenCV backend capable of processing real-time 30fps video streams, with a MongoDB layer for storing session history and longitudinal progress tracking.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+      \textbf{Languages}{: Python, TypeScript, JavaScript, C++, SQL} \\
+      \textbf{Frameworks}{: Next.js, React, FastAPI, Node.js, Express, Flask, PyTorch, scikit-learn, OpenCV, Tailwind CSS} \\
+      \textbf{Databases \& Tools}{: Supabase (PostgreSQL), MongoDB, Redis, Docker, Git, Vercel, Selenium, Capacitor} \\
+      \textbf{AI/ML}{: Generative AI, RAG, XGBoost, SHAP, CNN, LSTM, Agentic AI, Prompt Engineering} \\
+      \textbf{APIs \& Services}{: Groq (Llama-3), OpenAI, Google Gemini, Liveblocks, SerpApi, Stream, PRAW (Reddit)} \\
+    }}
+ \end{itemize}
+
+%-----------ACHIEVEMENTS-----------
+\section{Achievements}
+    \resumeItemListStart
+      \resumeItem{\textbf{Winner, Gen AI Domain} -- KJSSE Datathon 2026 (Project: TrendFall) -- Secured 1st place among 50+ competing teams for best application of Generative AI.}
+      \resumeItem{\textbf{Best UI/UX Award} -- SPIT Hackathon 2025 (Project: Mappa) -- Recognized for outstanding interface design and user experience.}
+      \resumeItem{\textbf{Active Hackathon Participant} -- Competed in 12+ hackathons across inter-college and national levels, consistently building full-stack and AI-driven solutions under time constraints.}
+    \resumeItemListEnd
+
+%-------------------------------------------
+\end{document}
