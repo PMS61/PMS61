@@ -2,6 +2,7 @@
 
 <a href="https://www.linkedin.com/in/prathamesh-sankhe-302294294/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
 <a href="mailto:prathamesh.sankhe1606@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"/></a>
+<a href="https://prathamesh-sankhe.vercel.app"><img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfolio"/></a>
 
 I'm a passionate Full-Stack Developer and AI enthusiast from Mumbai, currently pursuing a B.Tech in Information Technology at **Veermata Jijabai Technological Institute (VJTI)**.
 
